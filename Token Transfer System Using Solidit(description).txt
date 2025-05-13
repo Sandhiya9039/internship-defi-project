@@ -1,0 +1,90 @@
+Token Transfer System Using Solidity on Remix Ethereum
+Objective:
+To create and deploy a basic token transfer smart contract using Solidity in Remix Ethereum IDE, enabling token creation and peer-to-peer transfers.
+
+Tools Required:
+Remix Ethereum IDE (https://remix.ethereum.org)
+
+MetaMask Wallet (if using an external network)
+
+Ganache (optional, for private Ethereum network)
+
+Step-by-Step Procedure:
+1. Access Remix Ethereum
+Open your browser and go to: https://remix.ethereum.org
+
+Use the default workspace or create a new one.
+
+2. Create the Solidity Contract
+In the File Explorer, create a new file named SimpleToken.sol.
+
+Write a Solidity smart contract that defines:
+
+Token name, symbol, decimals
+
+Total supply
+
+Balances for each account
+
+A transfer() function for sending tokens
+
+3. Compile the Contract
+Click on the Solidity Compiler tab.
+
+Select Solidity version 0.8.20 or the version matching the contract.
+
+Click Compile SimpleToken.sol.
+
+Ensure that "Compilation successful" appears without errors.
+
+4. Deploy the Contract
+Go to the Deploy & Run Transactions tab.
+
+Choose the Environment:
+
+JavaScript VM (for quick testing)
+
+Injected Provider (for MetaMask + Ganache/testnet)
+
+Enter constructor argument (initial supply), for example: 1000000.
+
+Click Deploy and confirm the transaction if using MetaMask.
+
+5. Interact With the Contract
+Once deployed:
+
+Use the Deployed Contracts section to interact with the smart contract.
+
+Key Functions:
+totalSupply() — View the total number of tokens.
+
+balanceOf(address) — Check a user's token balance.
+
+transfer(to, value) — Send tokens to another Ethereum address.
+
+Example:
+Transfer 1 token to another account by entering the value in wei (for 1 token: 1000000000000000000).
+
+Verify the balance change using balanceOf before and after the transfer.
+
+Expected Output
+Action	Expected Result
+Deploy Contract	Tokens assigned to deployer's address
+totalSupply()	Returns total token supply (e.g., 1,000,000 * 10^18)
+balanceOf(deployer)	Shows full token supply at deployment
+transfer()	Transfers tokens and updates both balances
+balanceOf(recipient)	Shows increased balance after receiving tokens
+
+Notes
+Token amounts must be entered in wei (1 token = 10^18 wei).
+
+This is a basic token contract intended for educational and demonstration purposes. It is not a full ERC20 implementation.
+
+For full ERC20 features, consider adding approve(), transferFrom(), and allowance() functions.
+
+Summary
+Component	Status
+Smart Contract	Created and compiled successfully
+Token Initialization	Done at deployment
+Transfer Function	Verified and functional
+Deployment Environment	Remix Ethereum with JS VM or MetaMask
